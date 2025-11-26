@@ -55,7 +55,7 @@ export function SourcesSection() {
           {sources.map((item, idx) => (
             <div key={idx} className="text-sm text-burgundy/70">
               <span className="font-medium text-burgundy">{item.source}.</span>{' '}
-              "{item.title}" (Accessed 2025). {item.note}
+              "{item.title}." {item.note}
             </div>
           ))}
         </div>
