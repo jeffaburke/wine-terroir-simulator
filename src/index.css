@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-burgundy: #4a1c2f;
+  --color-burgundy-light: #6b2d47;
+  --color-burgundy-dark: #361521;
+  --color-beige: #f5f1ed;
+  --color-beige-dark: #ebe5df;
+  --color-gray: #d4cfc9;
+  --color-gray-dark: #a8a29e;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Base styles */
+body {
+  @apply bg-beige text-burgundy font-body antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-medium tracking-tight;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl leading-tight;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl leading-snug;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+h4 {
+  @apply text-xl md:text-2xl;
+}
+
+p {
+  @apply leading-relaxed text-burgundy/80;
+}
+
+/* Links */
+a {
+  @apply text-burgundy underline-offset-4 hover:underline transition-colors;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 font-body font-medium text-sm tracking-wide uppercase transition-all duration-300 ease-out;
+}
+
+.btn-primary {
+  @apply bg-burgundy text-beige hover:bg-burgundy-light;
+}
+
+.btn-secondary {
+  @apply bg-transparent text-burgundy border border-burgundy hover:bg-burgundy hover:text-beige;
+}
+
+/* Cards */
+.card {
+  @apply bg-white/60 backdrop-blur-sm border border-gray/50 p-6 md:p-8 transition-shadow duration-300 hover:shadow-lg hover:shadow-burgundy/5;
+}
+
+/* Selection */
+::selection {
+  @apply bg-burgundy text-beige;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-beige-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-dark rounded-full hover:bg-burgundy/50;
+}
+
+/* Custom slider thumb */
+input[type="range"].slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4a1c2f;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #f5f1ed;
+  box-shadow: 0 2px 6px rgba(74, 28, 47, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(74, 28, 47, 0.4);
+}
+
+input[type="range"].slider-thumb::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4a1c2f;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #f5f1ed;
+  box-shadow: 0 2px 6px rgba(74, 28, 47, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].slider-thumb::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(74, 28, 47, 0.4);
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
