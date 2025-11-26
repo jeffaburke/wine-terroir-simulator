@@ -188,8 +188,8 @@ function GrapeTag({ grape }: { grape: ScoredGrape }) {
       </div>
       
       {/* Tooltip */}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-burgundy text-beige text-xs rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-        <p className="leading-relaxed">{grape.notes}</p>
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-burgundy text-xs rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+        <span className="leading-relaxed !text-beige block">{grape.notes}</span>
         <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-burgundy" />
       </div>
     </div>
